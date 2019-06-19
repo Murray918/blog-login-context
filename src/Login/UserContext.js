@@ -4,7 +4,7 @@ const { Provider, Consumer } = createContext()
 
 class LoginProvider extends Component {
 	state = {
-		username: 'Andrew',
+		username: '',
 		isLoggedIn: false
 	}
 
