@@ -4,4 +4,9 @@
     justify-content: center;
     padding: 3vmin;
     max-height: 35vmin;
-}   
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+}

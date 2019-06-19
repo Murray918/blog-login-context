@@ -13,7 +13,7 @@ export default () => {
 					<label>password</label>
 					<input type="password" />
 				</div>
-				<div>
+				<div className="login-button-container">
 					<input type="submit" />
 				</div>
 			</form>
