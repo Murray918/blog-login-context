@@ -4,8 +4,8 @@ import './Nav.css'
 
 export default ({ children }) => {
 	return (
-		<div>
-			<nav>
+		<div >
+			<nav id='Nav'>
 				<ul className="main-nav">
 					<li>
 						<Link to="/">Home</Link>

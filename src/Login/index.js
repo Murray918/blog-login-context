@@ -1,10 +1,21 @@
 import React from 'react'
 
-
 export default () => {
-    return (
-        <div>
-            <h1>Party Login</h1>
-        </div>
-    )
+	return (
+		<div className="form-container">
+			<form className="form">
+				<div>
+					<label>username</label>
+					<input type="text" />
+				</div>
+				<div>
+					<label>password</label>
+					<input type="password" />
+				</div>
+				<div>
+					<input type="submit" />
+				</div>
+			</form>
+		</div>
+	)
 }
