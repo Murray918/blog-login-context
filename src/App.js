@@ -1,29 +1,25 @@
 import React from 'react'
-
+import Landing from './Landing'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Main from './Main'
 import Login from './Login'
 import Nav from './Nav'
-import Logo from './Logo'
 import { LoginProvider } from './Login/UserContext'
+import PrivateRoute from './PrivateRoute'
 
 function App() {
 	return (
 		<Router>
 			<LoginProvider>
 				<Nav>
-					<div className="container">
-						<div className="App">
-							<header className="App-header">
-								<Logo large />
-							</header>
+					<Switch>
+						<div className="container">
+							<Route exact path="/" component={Landing} />
+							<Route path="/login" component={Login} />
+							<PrivateRoute path="/main" component={Main} />
 						</div>
-						<Switch>
-							<Route exact path="/" component={Login} />
-							<Route path="/main/" component={Main} />
-						</Switch>
-					</div>
+					</Switch>
 				</Nav>
 			</LoginProvider>
 		</Router>

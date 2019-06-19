@@ -19,6 +19,7 @@ export default ({ children }) => {
 									<Link to="/main/">Main</Link>
 								</li>
 								<li>
+								 <Link to="/login/">
 									<div className="logo-username-wrapper">
 										<ul className="logo-username-list">
 											<li>
@@ -27,6 +28,7 @@ export default ({ children }) => {
 											<li>{username}</li>
 										</ul>
 									</div>
+									</Link>
 								</li>
 							</ul>
 						</nav>

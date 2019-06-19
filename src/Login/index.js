@@ -17,12 +17,13 @@ export default class Login extends Component {
 	render() {
 		return (
 			<LoginConsumer>
-				{({ handleLogin }) => (
+				{({ handleLogin, isLoggedIn }) => (
 					<LoginForm
 						username={this.state.username}
 						password={this.state.password}
 						handleLogin={handleLogin}
 						handleChange={this.handleChange}
+						isLoggedIn={isLoggedIn}
 					/>
 				)}
 			</LoginConsumer>

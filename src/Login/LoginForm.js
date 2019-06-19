@@ -1,7 +1,15 @@
 import React from 'react'
 import './Login.css'
+import { Redirect } from 'react-router-dom'
 
-export default ({ handleChange, handleLogin, username, password }) => {
+export default ({
+	handleChange,
+	handleLogin,
+	username,
+	password,
+    isLoggedIn,
+    location
+}) => {
 	console.log(handleLogin)
 	const handleSubmit = event => {
 		event.preventDefault()
@@ -9,7 +17,8 @@ export default ({ handleChange, handleLogin, username, password }) => {
 	}
 	return (
 		<div className="form-container">
-			<form  onSubmit={handleSubmit}  className="form">
+        {redirectUser(isLoggedIn , location)}
+			<form onSubmit={handleSubmit} className="form">
 				<div>
 					<label>username</label>
 					<input
@@ -29,9 +38,22 @@ export default ({ handleChange, handleLogin, username, password }) => {
 					/>
 				</div>
 				<div className="login-button-container">
-					<button className="button-primary" type="submit">Login</button>
+					<button className="button-primary" type="submit">
+						Login
+					</button>
 				</div>
 			</form>
 		</div>
 	)
+}
+
+function redirectUser(condition, location) {
+	return !!condition ? (
+		<Redirect
+			to={{
+				pathname: '/main',
+				state: { from: location }
+			}}
+		/>
+	) : null
 }
