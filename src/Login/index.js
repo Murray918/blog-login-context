@@ -1,22 +1,31 @@
-import React from 'react'
-import './Login.css'
+import React, { Component } from 'react'
+import LoginForm from './LoginForm'
+import { LoginConsumer } from './UserContext'
 
-export default () => {
-	return (
-		<div className="form-container">
-			<form className="form">
-				<div>
-					<label>username</label>
-					<input type="text" />
-				</div>
-				<div>
-					<label>password</label>
-					<input type="password" />
-				</div>
-				<div className="login-button-container">
-					<input type="submit" />
-				</div>
-			</form>
-		</div>
-	)
+export default class Login extends Component {
+	state = {
+		username: '',
+		password: ''
+	}
+
+	handleChange = event => {
+		this.setState({
+			[event.currentTarget.name]: event.currentTarget.value
+		})
+	}
+
+	render() {
+		return (
+			<LoginConsumer>
+				{({ handleLogin }) => (
+					<LoginForm
+						username={this.state.username}
+						password={this.state.password}
+						handleLogin={handleLogin}
+						handleChange={this.handleChange}
+					/>
+				)}
+			</LoginConsumer>
+		)
+	}
 }

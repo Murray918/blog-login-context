@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
+import Logo from '../Logo'
 import { LoginConsumer } from '../Login/UserContext'
 
 export default ({ children }) => {
 	return (
 		<LoginConsumer>
-			{({username}) => {
-			
+			{({ username }) => {
 				return (
 					<div>
 						<nav id="Nav">
@@ -19,7 +19,14 @@ export default ({ children }) => {
 									<Link to="/main/">Main</Link>
 								</li>
 								<li>
-									{username}
+									<div className="logo-username-wrapper">
+										<ul className="logo-username-list">
+											<li>
+												<Logo small/>
+											</li>
+											<li>{username}</li>
+										</ul>
+									</div>
 								</li>
 							</ul>
 						</nav>

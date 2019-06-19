@@ -1,12 +1,16 @@
 import React from 'react'
 import logo from './logo.svg'
 import './Logo.css'
-import styles from './logo.modules.css'
+import styles from './logo.module.css'
 
 export default ({ small }) => {
 	return (
-		<div className={!!small ? styles.small : null}>
-			<img src={logo} className="App-logo" alt="logo" />
+		<div>
+			<img
+				className={!!small ? `${styles.small} App-logo` : 'App-logo'}
+				src={logo}
+				alt="logo"
+			/>
 		</div>
 	)
 }

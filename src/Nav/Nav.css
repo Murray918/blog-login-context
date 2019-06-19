@@ -1,11 +1,18 @@
 .main-nav {
-    padding : 1.5vmin;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: flex-end
+	padding: 1.5vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: flex-end;
 }
 
 #Nav {
-    background-color: bisque;
+	background-color: bisque;
+}
+
+.logo-username-list {
+	display: flex;
+    flex-direction: row;
+    
+    
 }
